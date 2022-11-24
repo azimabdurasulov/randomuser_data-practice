@@ -9,7 +9,7 @@ from phone_numbers import get_all_numbers
 from pictures import get_all_pictures_url
 from streets import get_all_streets
 from user import get_users_by_country
-
+from user import get_users_by_age
 
 data = read_data('Data/randomusers.json')
 
@@ -32,8 +32,9 @@ def main():
     # print(images)
     streets = get_all_streets(data)
     # print(streets)
-    users = get_users_by_country(data, 'Finland')
+    users = get_users_by_age(data, 24)
     print(users)
+
 
 main()
 
