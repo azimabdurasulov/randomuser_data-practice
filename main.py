@@ -10,6 +10,7 @@ from pictures import get_all_pictures_url
 from streets import get_all_streets
 from user import get_users_by_country
 from user import get_users_by_age
+from user import get_users_by_city
 
 data = read_data('Data/randomusers.json')
 
@@ -32,9 +33,12 @@ def main():
     # print(images)
     streets = get_all_streets(data)
     # print(streets)
-    users = get_users_by_age(data, 24)
-    print(users)
-
+    users = get_users_by_country(data, "Finland")
+    # print(users)
+    age = get_users_by_age(data, 76)
+    # print(age)
+    countrys = get_users_by_city(data, "Nokia")
+    print(countrys)
 
 main()
 
