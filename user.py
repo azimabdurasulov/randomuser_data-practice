@@ -38,8 +38,11 @@ def get_users_by_city(data: dict, city: str) -> list[dict]:
     Returns: 
         list: list of users. item ex: {'full_name': f'{first} {last} {title}', 'age': int}
     '''
-
-
+    citys  =[]
+    for city_d in data["results"]:
+        if city_d["location"]["city"] == city:
+            citys.append(city_d)
+    return citys
 def get_users_by_nat(data: dict, nat: str) -> list[dict]:
     '''get users by nat
     
