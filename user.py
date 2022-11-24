@@ -53,3 +53,8 @@ def get_users_by_nat(data: dict, nat: str) -> list[dict]:
     Returns: 
         list: list of users. item ex: {'full_name': f'{first} {last} {title}', 'age': int}
     '''
+    nats = []
+    for nat_u in data["results"]:
+        if nat_u["nat"] == nat:
+            nats.append(nat_u)
+    return nats

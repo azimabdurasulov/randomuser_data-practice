@@ -11,6 +11,7 @@ from streets import get_all_streets
 from user import get_users_by_country
 from user import get_users_by_age
 from user import get_users_by_city
+from user import get_users_by_nat
 
 data = read_data('Data/randomusers.json')
 
@@ -38,7 +39,9 @@ def main():
     age = get_users_by_age(data, 76)
     # print(age)
     countrys = get_users_by_city(data, "Nokia")
-    print(countrys)
+    # print(countrys)
+    nat = get_users_by_nat(data, "DE")
+    print(nat)
 
 main()
 
