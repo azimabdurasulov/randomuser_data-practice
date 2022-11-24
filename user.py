@@ -8,6 +8,9 @@ def get_users_by_country(data: dict, country: str) -> list[dict]:
     Returns: 
         list: list of users. item ex: {'full_name': f'{first} {last} {title}', 'age': int}
     '''
+    for count in data["results"]:
+        if count['location']['country'] == country:
+            return count
 
 
 def get_users_by_age(data: dict, age: int) -> list[dict]:
