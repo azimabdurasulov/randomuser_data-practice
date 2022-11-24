@@ -23,8 +23,11 @@ def get_users_by_age(data: dict, age: int) -> list[dict]:
     Returns: 
         list: list of users. item ex: {'full_name': f'{first} {last} {title}', 'age': int}
     '''
-
-
+    ages = []
+    for age_user in data["results"]:
+        if age_user["dob"]["age"] == age:
+            ages.append(age_user)
+    return ages
 def get_users_by_city(data: dict, city: str) -> list[dict]:
     '''get users by city
     
